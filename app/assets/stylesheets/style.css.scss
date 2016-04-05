@@ -117,7 +117,12 @@ nav > div.container > div.collapse > ul {
     }
   }
 }
-
+.navbar-toggle{
+	background:$color_stiletto_approx;
+	>span {
+		background-color:$white;
+	}
+}
 .navcat2 {
   margin-right: 120px;
 }
