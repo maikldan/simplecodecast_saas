@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>MRN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -19,15 +20,27 @@
       </button>
       
     </div>
-    
+    <figure class="logo_fig1">
+            <%= image_tag "icon2.png", class: "logo" %>
+    </figure>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav">
-            <li class="navcat1"><%= link_to "Home",root_path %></li>
-            <li class="navcat2"><a href="shop.html">Shop</a></li>
-            <li class="navcat3"><%= link_to "About", about_path %></li>
-            <li class="navcat3"><%= link_to "New", new_contact_path %></li>
-            <li class="navcat4"><a href="services.html">Services</a></li>
+      <figure class="logo_fig navbar-brand">
+            <%= image_tag "icon2.png", class: "logo" %>
+    </figure>
+      <ul class="nav navbar-left">
+            <li><%= link_to "Home",root_path %></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><%= link_to "About", about_path %></li>
+            <li><%= link_to "Contact Us", new_contact_path %></li>
             </ul>
+        <ul class="nav navbar-right">
+          <% if current_user %>
+            <li><%= button_to "Sing Out", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to "Log In", new_user_session_path, method: :get %></li>
+            <li><%= link_to "Sing In", new_user_registration_path, method: :get %></li>
+          <% end %>
+        </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

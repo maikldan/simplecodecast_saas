@@ -4,7 +4,20 @@
 @import "font-awesome";
 
 
+$small: 768px;
+$large: 1024px;
 
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $small) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $small + 1) and (max-width: $large - 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $large) { @content; }
+  }
+}
 //colors
 //colors
 $color_stiletto_approx: #9d2146;
@@ -58,24 +71,24 @@ h2 {
 }
 a {
 	text-decoration: none;
+	color:#9D2146;
 	&:hover {
 		text-decoration: none;
 	}
 }
-body {
-	margin: 0 auto;
-}
+
 header {
 	margin-top: 15px;
 }
 figure {
 	margin: 0;
+	display: block;
+	@include respond-to(handhelds) { display: none !important ;}
 	&.logo_fig {
-		width: 100%;
-		text-align: center;
 		margin: 0;
 		> img {
-			width: 100px;
+			width: 70px;
+			@include respond-to(medium-screens) { width:55px;}
 		}
 	}
 	&.basepost_img > img {
@@ -89,6 +102,36 @@ figure {
 		max-width: 100%;
 	}
 }
+figure {
+	margin: 0;
+	display: block;
+	width: 100px;
+	&.logo_fig1 {
+		margin: 0;
+		display: none;
+		@include respond-to(handhelds) { display: block !important;}
+		@include respond-to(handhelds) { margin-top:-40px;}
+		> img {
+			width: 70px;
+		}
+	}
+	&.basepost_img > img {
+		position: absolute;
+		margin: auto;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		max-height: 100%;
+		max-width: 100%;
+	}
+}
+.collapsing{
+	text-align: center;
+	line-height: 50px;
+	color:#9D2146 !important;
+	font-size: 1.3em;
+}
 nav > div.container > div.collapse > ul {
   list-style-type: none;
   text-align: center;
@@ -96,6 +139,8 @@ nav > div.container > div.collapse > ul {
   > li {
     display: inline-block;
     font-size: 14px;
+     @include respond-to(handhelds) { display: block !important;}
+     @include respond-to(medium-screens) { font-size:12px;}
     > {
       a {
         text-decoration: none;
@@ -105,6 +150,8 @@ nav > div.container > div.collapse > ul {
         color: #9D2146;
         font-size: 1.3em;
         width: 136px;
+         @include respond-to(medium-screens) { width:103px; font-size: 1.25em;}
+         @include respond-to(handhelds) { margin:0 auto; width:auto;}
         &:hover {
           background-color: #9D2146;
           color: #FBFCFC;
@@ -122,9 +169,6 @@ nav > div.container > div.collapse > ul {
 	>span {
 		background-color:$white;
 	}
-}
-.navcat2 {
-  margin-right: 120px;
 }
 main {
 	> section > div.base_review {
