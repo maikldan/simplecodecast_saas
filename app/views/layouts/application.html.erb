@@ -38,7 +38,6 @@
             <li><%= button_to "Sing Out", destroy_user_session_path, method: :delete %></li>
           <% else %>
             <li><%= link_to "Log In", new_user_session_path, method: :get %></li>
-            <li><%= link_to "Sing In", new_user_registration_path, method: :get %></li>
           <% end %>
         </ul>
     </div><!-- /.navbar-collapse -->
