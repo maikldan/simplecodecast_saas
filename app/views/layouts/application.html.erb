@@ -31,13 +31,13 @@
     </figure>
       <ul class="nav navbar-left">
             <li><%= link_to "Home",root_path %></li>
-            <li><a href="shop.html">Shop</a></li>
+            <li><%= link_to "Shop", products_path %></li>
             <li><%= link_to "About", about_path %></li>
             <li><%= link_to "Contact Us", new_contact_path %></li>
             </ul>
         <ul class="nav navbar-right">
           <% if current_user %>
-            <li><%= button_to "Sing Out", destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to "Sing Out", destroy_user_session_path, method: :delete %></li>
           <% else %>
             <li><%= link_to "Log In", new_user_session_path, method: :get %></li>
           <% end %>

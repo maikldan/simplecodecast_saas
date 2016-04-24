@@ -403,7 +403,8 @@ background: linear-gradient(to right, rgba(169, 3, 41, 0) 7%, rgba(169, 3, 41, 0
 }
 .shop_sec_1_1 {
 	position: relative;
-	margin-top: 4%;
+	margin-top: 2%;
+	margin-bottom: 2%;
 	height: 333px;
 }
 .shop_sec_1_2 {
@@ -425,8 +426,9 @@ background: linear-gradient(to right, rgba(169, 3, 41, 0) 7%, rgba(169, 3, 41, 0
 	max-width: 100%;
 }
 .shop_sec_1_2_button {
-	width: 100px;
-	height: 50px;
+	width: 100px !important;
+	height: 50px !important;
+	padding:10px;
 	color: $color_negroni_approx;
 	font-size: 1.1em;
 	background: transparent;
@@ -527,10 +529,16 @@ background: linear-gradient(to right, rgba(169, 3, 41, 0) 7%, rgba(169, 3, 41, 0
 .product_link {
 	display: block;
 	text-align: center;
+	font-size: 1.1em;
 	color: $color_stiletto_approx;
 	text-decoration: none;
 	&:hover {
+		text-decoration:none;
 		color: $color_puce_approx;
+	}
+	&:visited {
+		text-decoration:none;
+		color: $color_stiletto_approx;
 	}
 }
 .product_price {
@@ -586,6 +594,10 @@ background: linear-gradient(to right, rgba(169, 3, 41, 0) 7%, rgba(169, 3, 41, 0
 	margin: 9px;
 	color: $white;
 	background: $color_stiletto_approx;
+	&:hover {
+		text-decoration:none;
+		color: $color_puce_approx;
+	}
 }
 .sec_item_info_2 {
 	margin-top: 3%;
@@ -593,6 +605,7 @@ background: linear-gradient(to right, rgba(169, 3, 41, 0) 7%, rgba(169, 3, 41, 0
 .item_info_img {
 	position: relative;
 	height: 337px;
+	width:100%;
 	> img {
 		position: absolute;
 		margin: auto;

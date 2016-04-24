@@ -48,6 +48,12 @@ gem 'stripe', '1.16.1'
 
 gem 'figaro', '1.0.0'
 
+# Use Rmagic for pictures
+
+gem 'rmagick', '~> 2.15', '>= 2.15.4'
+gem 'carrierwave'
+gem 'mini_magick'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

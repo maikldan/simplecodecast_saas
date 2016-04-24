@@ -1,0 +1,58 @@
+ <main class="container">
+       <section class="sec_item_info_1 col-md-8">
+           <span class="item_info_header">
+               <%= @product.name %>
+           </span>
+           <p class="item_info_text">
+               <%= @product.review %>
+           </p>
+           <span class="item_info_price">
+               <%= number_to_currency@product.price %>
+           </span>
+           <button class="item_info_add_button">Add To Card</button>
+       <div class="clearfix"></div>
+       </section>
+       
+       <section class="sec_item_info_2 col-md-4">
+           <figure class="item_info_img">
+               <%= image_tag@product.image%>
+           </figure>
+       </section>
+       <section class="sec_item_info_3 col-md-8">
+          <table class="item_info_params">
+              <tr>
+                  <td>Processor: </td>
+                  <td> <%= @product.processor %></td>
+              </tr>
+              <tr>
+                  <td>RAM and ROM: </td>
+                  <td><%= @product.ram_rom %></td>
+              </tr>
+              <tr>
+                  <td>Display: </td>
+                  <td> <%= @product.display %></td>
+              </tr>
+              <tr>
+                  <td>Battery: </td>
+                  <td> <%= @product.battery %></td>
+              </tr>
+              <tr>
+                  <td>Operating System: </td>
+                  <td> <%= @product.os %></td>
+              </tr>
+              <tr>
+                  <td>Camera: </td>
+                  <td> <%= @product.camera %></td>
+              </tr>
+              
+          </table>
+          <iframe width="560" height="315" src="<%= @product.video %>" frameborder="0" allowfullscreen></iframe>
+       </section>
+   </main>
+<p>
+    <% if current_user == @admin_user %>
+        <%= link_to 'Edit', edit_product_path, class: 'item_info_add_button' %>
+    <% end %>
+    <%= link_to 'Back', products_path, class: 'item_info_add_button' %>
+</p>
+ 
