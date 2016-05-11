@@ -1,0 +1,9 @@
+<%= form_for @opsystem, multipart: true  do |f| %>
+    <div class="form-group">
+        <%= f.label :opsystem %>
+        <%= f.text_field :os, class:"form-control" %>
+    </div>
+    <div class="form-group">
+        <%= f.submit "Update OperationSystem", class: 'btn btn-primary' %>
+    </div>
+<% end %>

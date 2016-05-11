@@ -1,51 +1,56 @@
 <% if current_user ==  @admin_user %>
     <%= form_for @product, multipart: true do |f| %>
         <div class="well">
-            <div class="form-group">
-                <%= f.label :name %>
-                <%= f.text_field :name, class:"form-control" %>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <%= f.label :name %>
+                    <%= f.text_field :name, class:"form-control" %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :price %>
+                    <%= f.text_field :price, class:"form-control" %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :os %>
+                    <%= f.collection_select(:opsystem_id, Opsystem.all, :id, :os,  prompt: true) %>
+                 </div>
+                <div class="form-group">
+                    <%= f.label :processor %>
+                    <%= f.text_field :processor, class:"form-control" %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :display %>
+                    <%= f.text_field :display, class:"form-control" %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :battery %>
+                    <%= f.text_field :battery , class:"form-control"%>
+                </div>
             </div>
-            <div class="form-group">
-                <%= f.label :price %>
-                <%= f.text_field :price, class:"form-control" %>
-            </div>
-            <div class="form-group">
-                <%= f.label :os %>
-                <%= f.text_field :os, class:"form-control" %>
-            </div>
-            <div class="form-group">
-                <%= f.label :processor %>
-                <%= f.text_field :processor, class:"form-control" %>
-            </div>
-            <div class="form-group">
-                <%= f.label :display %>
-                <%= f.text_field :display, class:"form-control" %>
-            </div>
-            <div class="form-group">
-                <%= f.label :battery %>
-                <%= f.text_field :battery , class:"form-control"%>
-            </div>
-            <div class="form-group">
-                <%= f.label :ram_rom %>
-                <%= f.text_field :ram_rom, class:"form-control" %>
-            </div>
-            <div class="form-group">
-                <%= f.label :camera %>
-                <%= f.text_field :camera, class:"form-control" %>
-            </div>
-            <div class="from-group">
-                <%= f.label :video %>
-                <%= f.text_field :video, class:"form-control" %>
-            </div>
-            <div class="form-group">    
-                <%= f.label :image %>
-                <%= f.file_field :image, class:"form-control" %>
-            </div>
-            <div class="form-group">
-                <%= f.label :review %>
-                <%= f.text_area :review, class:"form-control" %>
-            </div>
-            <%= f.submit 'Save', class: 'btn btn-success' %>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <%= f.label :ram_rom %>
+                    <%= f.text_field :ram_rom, class:"form-control" %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :camera %>
+                    <%= f.text_field :camera, class:"form-control" %>
+                </div>
+                <div class="from-group">
+                    <%= f.label :video %>
+                    <%= f.text_field :video, class:"form-control" %>
+                </div>
+                <div class="form-group">    
+                    <%= f.label :image %>
+                    <%= f.file_field :image, class:"form-control" %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :review %>
+                    <%= f.text_area :review, class:"form-control" %>
+                </div>
+                <%= f.submit 'Save', class: 'btn btn-success' %>
+                </div>
+                <div class="clearfix"></div>
             </div>
         <% end %>
 <% else %>

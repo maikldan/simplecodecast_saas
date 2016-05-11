@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users do
     resource :profile
   end
+  resources :opsystems
   resources :contacts
   resources :products
   get '/shop' => 'products#index'

@@ -3,7 +3,8 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-
+$ultra-small: 320px;
+$micro-small: 480px;
 $small: 768px;
 $large: 1024px;
 
@@ -13,6 +14,9 @@ $large: 1024px;
   }
   @else if $media == medium-screens {
     @media only screen and (min-width: $small + 1) and (max-width: $large - 1) { @content; }
+  }
+   @else if $media == ultra-small-screens {
+    @media only screen and (min-width: $ultra-small) and (max-width: $micro-small) { @content; }
   }
   @else if $media == wide-screens {
     @media only screen and (min-width: $large) { @content; }
@@ -396,8 +400,7 @@ background: linear-gradient(to right, rgba(169, 3, 41, 0) 7%, rgba(169, 3, 41, 0
 
 .shop_sec_1 {
 	margin-top: 4%;
-	background: $color_careys_pink_approx;
-	background-image: url(../zenbg-1.png), url(../zenbg-2.png);
+	background: #9d2146;
 	background-size: cover;
 	background-repeat: repeat-y, repeat;
 }
@@ -412,6 +415,8 @@ background: linear-gradient(to right, rgba(169, 3, 41, 0) 7%, rgba(169, 3, 41, 0
 	margin-top: 3%;
 	> p {
 		color: $alice_blue;
+		display: inline-block;
+		width: 100%;
 		font-size: 1.2em;
 	}
 }
@@ -426,8 +431,10 @@ background: linear-gradient(to right, rgba(169, 3, 41, 0) 7%, rgba(169, 3, 41, 0
 	max-width: 100%;
 }
 .shop_sec_1_2_button {
-	width: 100px !important;
+	display: inline-block;
+	width: 120px !important;
 	height: 50px !important;
+	text-align: center;
 	padding:10px;
 	color: $color_negroni_approx;
 	font-size: 1.1em;
@@ -435,7 +442,7 @@ background: linear-gradient(to right, rgba(169, 3, 41, 0) 7%, rgba(169, 3, 41, 0
 	border: 3px solid $white;
 	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
 	transition: all 0.4s linear;
-	margin-left: 3%;
+	margin: 10px;
 	&:hover {
 		color: $color_stiletto_approx;
 		background: $white;
@@ -460,15 +467,19 @@ background: linear-gradient(to right, rgba(169, 3, 41, 0) 7%, rgba(169, 3, 41, 0
 }
 .shop_header_min .form-group {
 	display: inline-block !important;
+	@include respond-to(ultra-small-screens) {margin-left:0; width:60%; }
+	
 	> input {
 		padding-left: 10px;
-		width: 265px;
+		width: 100%;
 		height: 30px;
 	}
 }
+.form_department_text {
+	@include respond-to(ultra-small-screens) {width:100%; padding:0px 20px 20px; }
+}
 .form_search_button {
 	display: inline-block;
-	width: 80px;
 	height: 30px;
 	color: $color_negroni_approx;
 	font-size: 1em;
@@ -476,7 +487,7 @@ background: linear-gradient(to right, rgba(169, 3, 41, 0) 7%, rgba(169, 3, 41, 0
 	border: 3px solid $white;
 	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
 	transition: all 0.4s linear;
-	margin-left: 3%;
+	@include respond-to(ultra-small-screens) {width:35%; }
 	&:hover {
 		color: $color_stiletto_approx;
 		background: $white;

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160425134232) do
+ActiveRecord::Schema.define(version: 20160427201110) do
 
   create_table "contacts", force: true do |t|
     t.string   "name"
@@ -19,6 +19,11 @@ ActiveRecord::Schema.define(version: 20160425134232) do
     t.text     "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "opsystems", force: true do |t|
+    t.integer "product_id"
+    t.string  "os"
   end
 
   create_table "plans", force: true do |t|
@@ -29,17 +34,17 @@ ActiveRecord::Schema.define(version: 20160425134232) do
   end
 
   create_table "products", force: true do |t|
-    t.string "name"
-    t.float  "price"
-    t.text   "review"
-    t.string "os"
-    t.string "display"
-    t.string "processor"
-    t.string "ram_rom"
-    t.string "battery"
-    t.string "camera"
-    t.string "video"
-    t.string "image"
+    t.string  "name"
+    t.float   "price"
+    t.text    "review"
+    t.integer "opsystem_id", limit: 255
+    t.string  "display"
+    t.string  "processor"
+    t.string  "ram_rom"
+    t.string  "battery"
+    t.string  "camera"
+    t.string  "video"
+    t.string  "image"
   end
 
   create_table "profiles", force: true do |t|

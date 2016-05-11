@@ -7,12 +7,18 @@ class ProductsController < ApplicationController
     end
     
     def show
-         @admin_user = User.find(3)
+        @products = Product.all
+        @admin_user = User.find(3)
+        @pr = Product.where(params[:opsystem_id])
+        @opsystem = Opsystem.where(params[:@pr])
+        # Client.where("orders_count = ?", params[:orders])
+        # @operatingsystems = Opsystem.find_by(id: @pr )
     end
     
     def new
         @product = Product.new
         @admin_user = User.find(3)
+        @opsystems = Opsystem.all
     end
     
      # GET /products/1/edit
@@ -24,6 +30,7 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
+    @opsystems = Opsystem.all
 
     respond_to do |format|
       if @product.save
@@ -68,6 +75,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :price, :image, :review, :os, :processor, :ram_rom, :battery, :review, :display, :video, :camera )
+      params.require(:product).permit(:name, :price, :image, :review, :opsystem_id, :processor, :ram_rom, :battery, :review, :display, :video, :camera )
     end
 end
