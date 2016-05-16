@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160427201110) do
+ActiveRecord::Schema.define(version: 20160511152434) do
 
   create_table "contacts", force: true do |t|
     t.string   "name"
@@ -22,8 +22,7 @@ ActiveRecord::Schema.define(version: 20160427201110) do
   end
 
   create_table "opsystems", force: true do |t|
-    t.integer "product_id"
-    t.string  "os"
+    t.string "os"
   end
 
   create_table "plans", force: true do |t|
@@ -37,7 +36,6 @@ ActiveRecord::Schema.define(version: 20160427201110) do
     t.string  "name"
     t.float   "price"
     t.text    "review"
-    t.integer "opsystem_id", limit: 255
     t.string  "display"
     t.string  "processor"
     t.string  "ram_rom"
@@ -45,6 +43,7 @@ ActiveRecord::Schema.define(version: 20160427201110) do
     t.string  "camera"
     t.string  "video"
     t.string  "image"
+    t.integer "opsystem_id"
   end
 
   create_table "profiles", force: true do |t|

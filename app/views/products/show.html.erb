@@ -38,7 +38,7 @@
               </tr>
               <tr>
                   <td>Operating System: </td>
-                  <td>  <%= @opsystem  %>
+                  <td>  <%= @opsystem.os %>
                        
                   </td>
               </tr>
@@ -48,8 +48,10 @@
               </tr>
               
           </table>
-          <iframe width="560" height="315" src="<%= @product.video %>" frameborder="0" allowfullscreen></iframe>
        </section>
+          <div class="col-xs-12 text-center">
+              <iframe class = "video_product" src="<%= @product.video %>" frameborder="0" allowfullscreen></iframe>
+          </div>
    </main>
 <p>
     <% if current_user == @admin_user %>

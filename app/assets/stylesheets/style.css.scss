@@ -84,7 +84,7 @@ a {
 header {
 	margin-top: 15px;
 }
-figure {
+figure.logo_fig {
 	margin: 0;
 	display: block;
 	@include respond-to(handhelds) { display: none !important ;}
@@ -136,6 +136,9 @@ figure {
 	color:#9D2146 !important;
 	font-size: 1.3em;
 }
+.navbar {
+	margin-bottom: 3%;
+}
 nav > div.container > div.collapse > ul {
   list-style-type: none;
   text-align: center;
@@ -154,11 +157,13 @@ nav > div.container > div.collapse > ul {
         color: #9D2146;
         font-size: 1.3em;
         width: 136px;
+        transition-duration: 0.5s;
          @include respond-to(medium-screens) { width:103px; font-size: 1.23em;}
          @include respond-to(handhelds) { margin:0 auto; width:auto;}
         &:hover {
           background-color: #9D2146;
           color: #FBFCFC;
+          transition-duration: 0.5s;
         }
       }
       .active {
@@ -174,71 +179,11 @@ nav > div.container > div.collapse > ul {
 		background-color:$white;
 	}
 }
-main {
-	> section > div.base_review {
-		width: 80%;
-		margin: 0 auto;
-		margin-top: 80px;
-		margin-bottom: 3%;
-	}
-	> h1.revpage {
-		margin-top: 50px;
-		text-align: center;
-		color: $color_stiletto_approx;
-		font-family: $font_0;
-		display: block;
-	}
-}
-.revie_min_text {
-	height: auto;
-}
-.basepost {
-	text-decoration: none;
-	color: $color_stiletto_approx;
-	font-size: 1.2em;
-}
-.basepost_txt {
-	font-size: 1.2em;
-}
-.sec1 {
-	border-bottom: 1px solid $color_celeste_approx;
-	margin-bottom: 3%;
-}
-.simple_review {
-	padding: 0;
-}
+
 .clearfix {
 	clear: both;
 }
-.simplepost {
-	text-decoration: none;
-	color: $color_stiletto_approx;
-	font-size: 1em;
-}
-.recentpost {
-	text-decoration: none;
-	color: $color_stiletto_approx;
-	font-size: 1em;
-}
-.simplepost_img {
-	position: relative;
-	height: 294px;
-	> img {
-		position: absolute;
-		margin: auto;
-		top: 0;
-		right: 0;
-		left: 0;
-		bottom: 0;
-		max-height: 100%;
-		max-width: 100%;
-	}
-}
-.simplepost_txt {
-	font-size: 1.3em;
-}
-.sec3 {
-}
+
 .footer_links {
 	text-align: center;
 	> li {
@@ -259,106 +204,8 @@ background: -webkit-linear-gradient(left, rgba(169, 3, 41, 0) 7%, rgba(169, 3, 4
 background: linear-gradient(to right, rgba(169, 3, 41, 0) 7%, rgba(169, 3, 41, 0.36) 22%, rgba(143, 2, 34, 1) 49%, rgba(169, 3, 41, 0.39) 76%, rgba(169, 3, 41, 0) 93%);
   
 }
-.recent_post_img {
-	border-bottom: 1px solid $color_celeste_approx;
-	padding-bottom: 3%;
-	padding-top: 3%;
-}
-.recent_post_txt {
-	position: absolute;
-	bottom: 44%;
-	z-index: 10;
-	color: $color_stiletto_approx;
-	font: 900 20px $font_1;
-	right: 5%;
-	left: 5%;
-	text-align: center;
-	font-size: 1em;
-}
-.recent_post {
-	position: relative;
-	height: 210px;
-	> img {
-		position: absolute;
-		margin: auto;
-		top: 0;
-		right: 0;
-		left: 0;
-		bottom: 0;
-		max-height: 100%;
-		max-width: 100%;
-		opacity: 0.7;
-	}
-}
-.wrapper_body {
-	font-size: 11px;
-	font-family: $font_2, $font_0;
-	color: $color_gravel_approx;
-	text-align: center;
-}
-.special-box-shadow {
-	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-	box-shadow: -2px 32px 17px -10px $color_celeste_approx !important;
-}
-.cbm_wrap {
-	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-	border-radius: 8px;
-	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-	box-shadow: -17px 17px 7px -6px $color_celeste_approx;
-	display: inline-block;
-	background: $white;
-	border: 1px solid $color_celeste_approx;
-	margin-bottom: 3%;
-	position: relative;
-	padding: 20px 10px 10px;
-	h1 {
-		font-size: 1.8em;
-		font-weight: bold;
-		//Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-		text-shadow: 1px 1px 3px $black_30;
-	}
-	a {
-		text-decoration: none;
-		color: $color_stiletto_approx;
-		&:hover {
-			text-decoration: none;
-			color: $color_dove_gray_approx !important;
-		}
-	}
-}
-.noise {
-	position: relative;
-	z-index: 1;
-	&:before {
-		@extend %extend_1;
-	}
-}
-.vert-flag {
-	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-	box-shadow: 1px 0 1px $black_35;
-	background-image: linear-gradient($color_stiletto_approx, $color_dark_tan_approx);
-	display: inline-block;
-	vertical-align: middle;
-	text-align: center;
-	width: 50px;
-	position: absolute;
-	padding-bottom: 35px;
-	top: -2px;
-	padding-top: 10px;
-	left: 10px;
-	color: $white;
-}
-.vert-flag::before {
-	content: '';
-	display: block;
-	border-style: solid;
-	border-width: 25px;
-	border-color: transparent;
-	left: 0;
-	border-bottom-color: $white;
-	position: absolute;
-	bottom: -1px;
-}
+
+
 .about_us_img {
 	position: relative;
 	margin-top: 4%;
@@ -400,7 +247,12 @@ background: linear-gradient(to right, rgba(169, 3, 41, 0) 7%, rgba(169, 3, 41, 0
 
 .shop_sec_1 {
 	margin-top: 4%;
-	background: #9d2146;
+	
+
+background: #ff0084; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #ff0084 , #33001b); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #ff0084 , #33001b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
 	background-size: cover;
 	background-repeat: repeat-y, repeat;
 }
@@ -744,4 +596,151 @@ section.sec2 {
 	font-size: 2em;
 	text-align: center;
 	color: $black;
+}
+.video_product {
+	height: 300px;
+	width: 600px;
+	@include respond-to(ultra-small-screens) {width:100%; height:200px; }
+}
+/* HERE STARTS FORMS */
+.form_for_product {
+	margin-top: 3%;
+	background: #9d2146;
+    color:white;   
+    font-size: 1.2em;
+	border-radius:0px;
+	>.col-md-6 > .form-group > input.form-control {
+		border-radius:0px;
+	}
+}
+.submit_product_form {
+    display: inline-block;
+    vertical-align: middle;
+    border: none;
+    border-radius: 0;
+    padding: 4px 20px;
+    font-size: 1.2em;
+    color: #9d2146;
+    background: white;
+	
+}
+select option{
+	background: #9d2146; /* fallback for old browsers */
+	color:white;
+	font-size: 1.05em;
+}
+select{
+background: #9d2146;
+	color:white;
+	font-size: 1.1em;
+}
+/* Home page */
+
+.plan_picture {
+	position: relative;
+	height: 200px;
+	width: 150px;
+	margin: 0 auto;
+		>img.plan_picture_img{
+			position: absolute;
+			margin: auto;
+			height: 200px;
+			width: 200px;
+			top: 0;
+			right: 0;
+			left: 0;
+			bottom: 0;
+			max-height: 100%;
+			max-width: 100%;		
+		}
+}
+.plan_box{
+	margin-top: 2%;
+	margin-bottom: 2%;
+	color: white;
+	background: #9d2146;
+	border:1px solid #9d2146;
+	>h4 {
+		padding: 5px;
+	}
+	>h2 {
+		padding: 5px;
+	}
+}
+.plan_btn {
+	background: white;
+	border-radius:0;
+	text-align: center;
+	font-size: 1.4em;
+	&:hover {
+		color: #ea4876;
+		transition-duration: 0.2s;
+	}
+}
+.new_profile_btn {
+	margin: 0 auto;
+	text-align: center;
+	display: block;
+	font-size: 2em;
+	transition-duration: 0.5s;
+	&:hover {
+		color: white;
+		background: #9d2146;
+		transition-duration: 0.5s;
+	}
+}
+.log_in_modal_form{
+	border-radius:0;
+	background: #9d2146;
+	margin-top: 10%;
+	color:white;
+	font-size: 1.2em;
+	> a {
+		color:white;
+		font-size: 1.2em;
+	}
+}
+.form-control{
+	border-radius:0;
+	
+}
+.forgot_password_form{
+	border-radius:0;
+	background: #9d2146;
+	color:white;
+	font-size: 1.2em;
+	margin-bottom: 4%;
+	> div.col-xs-8 > a {
+		color:white;
+		font-size: 1.2em;
+	}
+	
+}
+.registration_form_style{
+	border-radius:0;
+	background: #9d2146;
+	color:white;
+	font-size: 1.2em;
+	margin-bottom: 4%;
+		> a {
+		color:white;
+		font-size: 1.2em;
+	}
+}
+.basic_pro_account_form_page{
+	color:#9d2146;
+}
+.profile_new_form{
+	border-radius:0;
+	background: #9d2146;
+	color:white;
+	font-size: 1.2em;
+	margin-bottom: 4%;
+		> a {
+		color:white;
+		font-size: 1.2em;
+	}
+}
+.profile_new_form_decript{
+	color:#9d2146;
 }

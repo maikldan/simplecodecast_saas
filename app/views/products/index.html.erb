@@ -1,5 +1,5 @@
 <main class="container shop">
-        <section class="row shop_sec_1">
+        <div class="row shop_sec_1">
             
                 <div class="col-md-6  shop_sec_1_1">
                     <img src="<%= @products.last.image %>" alt="" class="shop_sec_1_img">
@@ -15,8 +15,8 @@
                     <%= link_to 'Buy It Now!', @products.last, class: 'shop_sec_1_2_button' %>
                 </div>
            
-        </section>
-        <section class="row shop_content">
+        </div>
+        <div class="row shop_content">
             <div class="shop_header_min">
                 <div class="col-xs-4 form_department_text">
                     <h1 class="shop_header_h1">
@@ -61,5 +61,5 @@
             <% if current_user ==  @admin_user %>
                 <%= link_to 'New Product', new_product_path, class: 'item_info_add_button' %>
             <% end %>
-        </section>
+        </div>
     </main>

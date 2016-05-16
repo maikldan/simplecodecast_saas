@@ -1,6 +1,7 @@
 <% if current_user ==  @admin_user %>
     <%= form_for @product, multipart: true do |f| %>
-        <div class="well">
+        <h1>Add New Product</h1>
+        <div class="well form_for_product">
             <div class="col-md-6">
                 <div class="form-group">
                     <%= f.label :name %>
@@ -10,10 +11,12 @@
                     <%= f.label :price %>
                     <%= f.text_field :price, class:"form-control" %>
                 </div>
-                <div class="form-group">
-                    <%= f.label :os %>
-                    <%= f.collection_select(:opsystem_id, Opsystem.all, :id, :os,  prompt: true) %>
-                 </div>
+               
+                    <div class="form-group">
+                        <%= f.label :os %>
+                        <%= f.collection_select(:opsystem_id, Opsystem.all, :id ,:os,  prompt: true) %>
+                     </div>
+                
                 <div class="form-group">
                     <%= f.label :processor %>
                     <%= f.text_field :processor, class:"form-control" %>
@@ -42,13 +45,13 @@
                 </div>
                 <div class="form-group">    
                     <%= f.label :image %>
-                    <%= f.file_field :image, class:"form-control" %>
+                    <%= f.file_field :image %>
                 </div>
                 <div class="form-group">
                     <%= f.label :review %>
                     <%= f.text_area :review, class:"form-control" %>
                 </div>
-                <%= f.submit 'Save', class: 'btn btn-success' %>
+                <%= f.submit 'Save', class: ' submit_product_form' %>
                 </div>
                 <div class="clearfix"></div>
             </div>

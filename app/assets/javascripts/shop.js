@@ -49,4 +49,10 @@ $(document).ready(function () {
                 $(this).addClass("active");
         })
     });
+    $('.product_form').on('click', function(){
+        console.log("sds");
+      $(this).closest("a.product_link").trigger('click');
+    });
+   
+
 });

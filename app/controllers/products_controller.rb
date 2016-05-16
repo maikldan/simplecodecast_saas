@@ -9,16 +9,24 @@ class ProductsController < ApplicationController
     def show
         @products = Product.all
         @admin_user = User.find(3)
-        @pr = Product.where(params[:opsystem_id])
-        @opsystem = Opsystem.where(params[:@pr])
-        # Client.where("orders_count = ?", params[:orders])
+        @opsystems = Opsystem.all
+        # users = User.where(name: 'Oscar')
+        # users.new.name # => 'Oscar'
+        @product = Product.find(params[:id])
+        @product_os = @product.opsystem_id
+        @opsystem = Opsystem.find(@product_os)
         # @operatingsystems = Opsystem.find_by(id: @pr )
     end
     
     def new
-        @product = Product.new
-        @admin_user = User.find(3)
-        @opsystems = Opsystem.all
+      @admin_user = User.find(3)
+      @opsystems = Opsystem.all
+        if current_user == @admin_user
+            @product = Product.new
+        else
+             redirect_to root_url
+        end
+        
     end
     
      # GET /products/1/edit
@@ -75,6 +83,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :price, :image, :review, :opsystem_id, :processor, :ram_rom, :battery, :review, :display, :video, :camera )
+      params.require(:product).permit(:name, :price, :image, :review, :processor, :ram_rom, :battery, :review, :display, :video, :camera, :opsystem_id )
     end
 end
