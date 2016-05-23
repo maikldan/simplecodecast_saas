@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   resources :products do
     resources :comments
   end
-  get '/shop' => 'products#index'
   get '/about' => 'pages#about'
   root 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
