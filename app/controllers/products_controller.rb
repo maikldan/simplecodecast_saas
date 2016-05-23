@@ -3,22 +3,31 @@ class ProductsController < ApplicationController
     
     def index
         @products = Product.all
+        if params[:search]
+          @products = Product.search(params[:search])
+        else
+          @products = Product.all
+        end
         @admin_user = User.find(3)
     end
     
     def show
         @products = Product.all
+        # @product = Product.find(params[:id])
         @admin_user = User.find(3)
-        @opsystems = Opsystem.all
-        # users = User.where(name: 'Oscar')
-        # users.new.name # => 'Oscar'
-        @product = Product.find(params[:id])
-        @product_os = @product.opsystem_id
-        @opsystem = Opsystem.find(@product_os)
-        # @operatingsystems = Opsystem.find_by(id: @pr )
+        if current_user
+          @comment = Comment.new
+          @comment.user_id = current_user.id
+        end
+        respond_to do |format|
+          format.html # show.html.erb
+          format.json { render json: @product }
+        end
+        
     end
     
     def new
+      @categories = Category.all.map{|c| [ c.categoria, c.id ] }
       @admin_user = User.find(3)
       @opsystems = Opsystem.all
         if current_user == @admin_user
@@ -32,12 +41,14 @@ class ProductsController < ApplicationController
      # GET /products/1/edit
   def edit
        @admin_user = User.find(3)
+       @categories = Category.all.map{|c| [ c.categoria, c.id ] }
   end
 
   # POST /products
   # POST /products.json
   def create
     @product = Product.new(product_params)
+    @product.category_id = params[:category_id] 
     @opsystems = Opsystem.all
 
     respond_to do |format|
@@ -54,6 +65,7 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
+    @product.category_id = params[:category_id]
     respond_to do |format|
       if @product.update(product_params)
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
@@ -83,6 +95,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :price, :image, :review, :processor, :ram_rom, :battery, :review, :display, :video, :camera, :opsystem_id )
+      params.require(:product).permit(:name, :price, :image, :review, :processor, :ram_rom, :battery, :review, :display, :video, :camera, :opsystem_id, :category_id )
     end
 end

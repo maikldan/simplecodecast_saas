@@ -1,0 +1,31 @@
+<% @product.comments.each do |comment| %>
+<div class="row comments_container_show">
+   <div class="comment-author-pic col-xs-2">
+      <figure class="profile_comment_img">
+         <img src ="<%= comment.user.profile.image %>"></img>
+      </figure>
+      <div class="comment-author">
+       <%= comment.user.profile.first_name %>
+       <%= comment.user.profile.last_name %>
+      </div>
+   </div>
+   <div class="comment-content col-xs-8">
+     <p class="comment_content"><%= comment.comment_text %></p>
+   </div>
+  <div class="comment-inner-wrapper col-xs-2">
+    <div class="comment-controls">
+    <% if current_user %>
+         <% if comment.user_id == current_user.id or @admin_user %>          
+           <%= link_to [@product,comment], :method => :delete, :confirm => "Are you sure?" do  %>
+            <i class="fa fa-trash fa-3x"></i><br/>
+           <% end %>
+         <% end %>
+     <% end %>
+     <span class="comment_created_at">
+         <% t = comment.created_at %>
+         <%= t.strftime("%H:%M:%S %B %Y") %>
+     </span>
+   </div>
+   </div>
+   </div>
+<% end %>

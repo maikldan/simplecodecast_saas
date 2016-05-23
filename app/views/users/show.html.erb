@@ -1,7 +1,14 @@
-<%= @user.profile.first_name %> <%= @user.profile.last_name %><br/>
-<%= @user.profile.job_title %><br/>
-<% if current_user.plan_id == 2 %>
-    <%= @user.profile.phone_number %><br/>
-    <%= @user.profile.contact_email %><br/>
-<% end %>
-<%= @user.profile.description %><br/>
+<div class="row profile_section">
+    <figure class="fig_profile_img col-md-4">
+        <img src="<%= @user.profile.image %>" class="profile_img"></img><br/>
+    </figure>
+    <div class="col-md-8 profile_info">
+        <span><%= @user.profile.first_name %> <%= @user.profile.last_name %> </span><br/> 
+        <span><%= @user.profile.job_title %></span><br/>
+        <% if current_user.plan_id == 2 %>
+            <span><%= @user.profile.phone_number %></span><br/> 
+            <span><%= @user.profile.contact_email %></span><br/> 
+        <% end %>
+        <p><%= @user.profile.description %></p>
+    </div>
+</div>

@@ -4,8 +4,12 @@ Rails.application.routes.draw do
     resource :profile
   end
   resources :opsystems
+  
+  resources :categories
   resources :contacts
-  resources :products
+  resources :products do
+    resources :comments
+  end
   get '/shop' => 'products#index'
   get '/about' => 'pages#about'
   root 'pages#home'

@@ -1,5 +1,5 @@
  <main class="container">
-       <section class="sec_item_info_1 col-md-8">
+       <div class="sec_item_info_1 col-md-8">
            <span class="item_info_header">
                <%= @product.name %>
            </span>
@@ -11,14 +11,14 @@
            </span>
            <button class="item_info_add_button">Add To Card</button>
        <div class="clearfix"></div>
-       </section>
+       </div>
        
-       <section class="sec_item_info_2 col-md-4">
+       <div class="sec_item_info_2 col-md-4">
            <figure class="item_info_img">
                <%= image_tag@product.image%>
            </figure>
-       </section>
-       <section class="sec_item_info_3 col-md-8">
+       </div>
+       <div class="sec_item_info_3 col-md-8">
           <table class="item_info_params">
               <tr>
                   <td>Processor: </td>
@@ -38,7 +38,7 @@
               </tr>
               <tr>
                   <td>Operating System: </td>
-                  <td>  <%= @opsystem.os %>
+                  <td>  <%= @product.opsystem.os %>
                        
                   </td>
               </tr>
@@ -48,9 +48,17 @@
               </tr>
               
           </table>
-       </section>
+       </div>
           <div class="col-xs-12 text-center">
               <iframe class = "video_product" src="<%= @product.video %>" frameborder="0" allowfullscreen></iframe>
+           <div class="comment-wrapper">
+                  <%= render 'comments/comments' %>
+                  <% if current_user %>
+                      <h2 class="addcomment">Add Comment</h2>
+                    <%= render 'comments/form' %>
+                <% end %>
+            </div>
+           
           </div>
    </main>
 <p>
