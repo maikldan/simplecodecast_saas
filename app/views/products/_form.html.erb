@@ -12,12 +12,12 @@
                     <%= f.text_field :price, class:"form-control" %>
                 </div>
                 <div class="form-group">
-                    <%= f.label :os %>
-                    <%= f.collection_select(:opsystem_id, Opsystem.all, :id ,:os,  prompt: true) %>
+                    <%= f.label :Opsystem %>
+                    <%= f.collection_select(:opsystem_id, Opsystem.all, :id ,:os, :prompt => "Select Opsystem") %>
                 </div>
                 <div class="form-group">
                     <%= f.label :Category %>
-                    <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select one!") %>
+                    <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select Category") %>
                 </div>
                 <div class="form-group">
                     <%= f.label :processor %>
