@@ -139,7 +139,7 @@ figure {
 .navbar {
 	margin-bottom: 3%;
 }
-nav > div.container > div.collapse > ul {
+nav.nav1 > div.container > div.navbar-collapse > ul.nav1 {
   list-style-type: none;
   text-align: center;
   font-size: 0;
@@ -166,13 +166,13 @@ nav > div.container > div.collapse > ul {
           transition-duration: 0.5s;
         }
       }
-      .active {
-        background-color: #9D2146;
-        color: #FBFCFC;
-      }
     }
   }
 }
+.activee {
+        background-color: #9D2146;
+        color: white;
+      }
 .navbar-toggle{
 	background:$color_stiletto_approx;
 	>span {
@@ -555,32 +555,7 @@ background: linear-gradient(to left, #ff0084 , #33001b); /* W3C, IE 10+/ Edge, F
 		border: 3px solid $color_stiletto_approx;
 	}
 }
-nav > ul {
-	list-style-type: none;
-	text-align: center;
-	font-size: 0;
-	> li {
-		display: inline-block;
-		font-size: 14px;
-		> a {
-			text-decoration: none;
-			margin-top: 10px;
-			line-height: 50px;
-			display: block;
-			color: $color_stiletto_approx;
-			font-size: 1.3em;
-			width: 136px;
-			&:hover {
-				background-color: $color_stiletto_approx;
-				color: $color_alabaster_approx;
-			}
-		}
-		}
-	}
-	.active {
-			background-color: $color_stiletto_approx;
-			color: $color_alabaster_approx;
-	}
+
 div.revie_min_text > figure {
 	height: 200px;
 	position: relative;

@@ -4,21 +4,21 @@
         <%= hidden_field_tag 'plan', params[:plan] %>
         
         <div class="field form-group">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+          <label for="email">Email:</label>
+          <%= f.email_field :email, autofocus: true, class: 'form-control', title: "Va rugam scriti emailu corect pentru a primi noutati de la noi" %>
         </div>
       
         <div class="field form-group">
-          <%= f.label :password %>
+          <label for="password">Password:</label>
           <% if @validatable %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
           <% end %><br />
-          <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+          <%= f.password_field :password, autocomplete: "off", class: 'form-control', title: "Parola trebuie sa contina minim 8 caractere" %>
         </div>
       
         <div class="field form-group">
-          <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+          <label for="user_password_confirmation">Password Confirm:</label>
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control',title: "Introduceti parola identic cu cea precedenta" %>
         </div>
       
         <div class="actions form-group">

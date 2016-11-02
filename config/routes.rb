@@ -7,9 +7,12 @@ Rails.application.routes.draw do
   
   resources :categories
   resources :contacts
+  resources :admins
   resources :products do
-    resources :comments
+   resources :comments
+   resources :pdfs
   end
+  
   get '/about' => 'pages#about'
   root 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.

@@ -41,13 +41,34 @@ $(document).ready(function () {
             'display': 'none'
         });
     });
+    $('a').smoothScroll({
+        speed: 600,
+    });
     $(function () {
         var pgurl = window.location.href.substr(window.location.href
             .lastIndexOf("/") + 1);
-        $("nav > div.container > div.collapse > ul > li > a").each(function () {
+        $("#nav ul li a").each(function () {
             if ($(this).attr("href") == pgurl || $(this).attr("href") == '')
                 $(this).addClass("active");
         })
     });
-
+    // Normal Clicks
+    $(function() {
+      $('.toggle-nav').click(function() {
+        $('body').toggleClass('show-nav');
+         return false;
+      });
+      
+    });
+    
+    
+    // Toggle with hitting of ESC
+    $(document).keyup(function(e) {
+    	if (e.keyCode == 27) {
+       $('body').toggleClass('show-nav');
+      }
+    });
+    $(function() {
+    $( document ).tooltip();
+  });
 });

@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
     before_action :set_product, only: [:show, :edit, :update, :destroy]
     
+      
     def index
         @products = Product.all
         if params[:search]
@@ -9,7 +10,9 @@ class ProductsController < ApplicationController
           @products = Product.all
         end
         @admin_user = User.find(3)
+        
     end
+    
     
     def show
         @products = Product.all
