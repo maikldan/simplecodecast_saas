@@ -1,25 +1,40 @@
 
 <%= link_to "Create Your Profile!", new_user_profile_path(current_user), class: "new_profile_btn" if current_user %>
+<% if @user %>
+<div class="col_md_12">
+    <%= image_tag "welcome.png", class: "wellcome_home_image" %>
+    
+    <%= link_to products_path  do %>
+        <div class="col-md-2 col-md-offset-5">
+            <%= image_tag "Daily-Review-Logo.png", class: "wellcome_home_image" %>
+        </div>
+    <% end %>
+</div>
+<% else %>
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 col-md-offset-3">
         <div class="plan_box">
-            <h2 class="text-center">Basic Membership</h2>
+            <h2 class="text-center">Registration</h2>
             <figure class="plan_picture">
                 <%= image_tag "basicplan-gold2.png", class: "plan_picture_img" %>
             </figure>
-            <h4>Sing up for free and get basic access to the comunity.</h4>
+            <h4>Sing up for free and get access to the comunity.</h4>
             <br/>
             <%= link_to "Sing up with Basic", new_user_registration_path(plan: @basic_plan.id), class: 'plan_btn btn-lg btn-block' %>
         </div>
     </div>
-    <div class="col-md-6">
-        <div class="plan_box">
-           <h2 class="text-center">Pro Membership</h2> 
-           <figure class="plan_picture">
-                <%= image_tag "proplan-blue2.png", class: "plan_picture_img" %>
-            </figure>
-           <h4>Sing up for pro account for $10/moth and get access to the community and cnd contact information!</h4>
-            <%= link_to "Sing up with Pro", new_user_registration_path(plan: @pro_plan.id), class: 'plan_btn btn-lg btn-block' %>
-        </div>
-    </div>
+    <%#- Parametrul dat este in dezvoltare , scoatem if false-%>
+        <% if false %>
+           <div class="col-md-6">
+                <div class="plan_box">
+                   <h2 class="text-center">Pro Membership</h2> 
+                   <figure class="plan_picture">
+                        <%= image_tag "proplan-blue2.png", class: "plan_picture_img" %>
+                    </figure>
+                   <h4>Sing up for pro account for $10/moth and get access to the community and cnd contact information!</h4>
+                    <%= link_to "Sing up with Pro", new_user_registration_path(plan: @pro_plan.id), class: 'plan_btn btn-lg btn-block' %>
+                </div>
+            </div>
+        <% end %>
 </div>
+    <% end %>

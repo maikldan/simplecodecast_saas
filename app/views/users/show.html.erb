@@ -5,7 +5,7 @@
     <div class="col-md-8 profile_info">
         <span><%= @user.profile.first_name %> <%= @user.profile.last_name %> </span><br/> 
         <span><%= @user.profile.job_title %></span><br/>
-        <% if current_user.plan_id == 2 %>
+        <% if current_user.plan_id == 2 or current_user.try(:admin)%>
             <span><%= @user.profile.phone_number %></span><br/> 
             <span><%= @user.profile.contact_email %></span><br/> 
         <% end %>
