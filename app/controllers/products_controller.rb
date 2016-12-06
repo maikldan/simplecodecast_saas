@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
         else
           @products = Product.all
         end
-        @admin_user = User.find(3)
+       
         
     end
     
