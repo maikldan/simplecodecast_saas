@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   
   resources :categories
   resources :contacts
+  resources :opsystems
   resources :admins
   resources :products do
    resources :comments
