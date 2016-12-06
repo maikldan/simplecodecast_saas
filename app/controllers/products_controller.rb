@@ -31,7 +31,7 @@ class ProductsController < ApplicationController
     def new
       @categories = Category.all.map{|c| [ c.categoria, c.id ] }
       @opsystems = Opsystem.all
-        if current_user == @admin_user
+        if current_user.try(:admin)
             @product = Product.new
         else
              redirect_to root_url
