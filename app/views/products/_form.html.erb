@@ -1,4 +1,4 @@
-<% if current_user ==  @admin_user %>
+<% if current_user.try(:admin?) %>
     <%= form_for @product, multipart: true do |f| %>
         <h1>Add New Product</h1>
         <div class="well form_for_product">

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160519101317) do
+ActiveRecord::Schema.define(version: 20161206062307) do
 
   create_table "categories", force: true do |t|
     t.string   "categoria"
@@ -95,6 +95,7 @@ ActiveRecord::Schema.define(version: 20160519101317) do
     t.datetime "updated_at"
     t.integer  "plan_id"
     t.string   "stripe_customer_token"
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -15,7 +15,7 @@
   <div class="comment-inner-wrapper col-xs-12 col-sm-2 col-md-2 col-lg-2">
     <div class="comment-controls">
     <% if current_user %>
-         <% if comment.user_id == current_user.id or @admin_user %>          
+         <% if comment.user_id == current_user.id or current_user.try(:admin?) %>          
            <%= link_to [@product,comment], :method => :delete, :confirm => "Are you sure?" do  %>
             <i class="fa fa-trash fa-3x"></i><br/>
            <% end %>

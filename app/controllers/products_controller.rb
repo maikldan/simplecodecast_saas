@@ -17,7 +17,6 @@ class ProductsController < ApplicationController
     def show
         @products = Product.all
         # @product = Product.find(params[:id])
-        @admin_user = User.find(3)
         if current_user
           @comment = Comment.new
           @comment.user_id = current_user.id
@@ -31,7 +30,6 @@ class ProductsController < ApplicationController
     
     def new
       @categories = Category.all.map{|c| [ c.categoria, c.id ] }
-      @admin_user = User.find(3)
       @opsystems = Opsystem.all
         if current_user == @admin_user
             @product = Product.new
@@ -43,7 +41,6 @@ class ProductsController < ApplicationController
     
      # GET /products/1/edit
   def edit
-       @admin_user = User.find(3)
        @categories = Category.all.map{|c| [ c.categoria, c.id ] }
   end
 

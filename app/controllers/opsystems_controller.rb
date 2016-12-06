@@ -5,7 +5,7 @@ class OpsystemsController < ApplicationController
         #@user = User.find( params[:user_id] )
         #@profile = Profile.new
         @opsystem = Opsystem.new
-        if current_user == @admin_user
+        if current_user.try(:admin?)
             @product = Product.new
         else
              redirect_to root_url
