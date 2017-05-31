@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="shop_test@localhost" uuid="ff07d112-694e-4ed2-b9f0-7bef108196c3">
+      <database-info product="PostgreSQL" version="9.6.2" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>postgres</user-name>
+      <introspection-schemas>shop_test:public</introspection-schemas>
+    </data-source>
+    <data-source name="dabh0f96l2klat@ec2-54-235-199-36.compute-1.amazonaws.com" uuid="deac98e1-30d0-4f60-a34d-6ac01dcfdb44">
+      <database-info product="PostgreSQL" version="9.4.10" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>rwqfshhahwchsi</user-name>
+      <introspection-schemas>dabh0f96l2klat:public</introspection-schemas>
+    </data-source>
+    <data-source name="Rails simplecodecasts_saas: default" uuid="25a9e3b2-3626-48da-a983-d2fac19c1ea7">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <first-sync>true</first-sync>
+      <user-name>rwqfshhahwchsi</user-name>
+    </data-source>
+    <data-source name="Rails simplecodecasts_saas: test" uuid="89a10e90-db0e-464b-ae36-08b652a6933e">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <first-sync>true</first-sync>
+      <user-name>rwqfshhahwchsi</user-name>
+    </data-source>
+    <data-source name="Rails simplecodecasts_saas: production" uuid="f30fb8d6-6b70-478f-bbbd-901a75dd9bb9">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <first-sync>true</first-sync>
+      <user-name>rwqfshhahwchsi</user-name>
+    </data-source>
+    <data-source name="Rails simplecodecasts_saas: development" uuid="4ad51112-a1a1-450b-a3a8-1ae85acd9fa7">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <first-sync>true</first-sync>
+      <user-name>rwqfshhahwchsi</user-name>
+    </data-source>
+  </component>
+</project>

@@ -1,6 +1,10 @@
 
-<%= link_to "Create Your Profile!", new_user_profile_path(current_user), class: "new_profile_btn" if current_user %>
 <% if @user %>
+    <% if @user.profile %>
+        <%= link_to "Edit Your Profile!", edit_user_profile_path(current_user), class: "new_profile_btn" if current_user %>
+    <% else %>
+        <%= link_to "Create Your Profile!", new_user_profile_path(current_user), class: "new_profile_btn" if current_user %>
+    <% end %>
 <div class="col_md_12">
     <%= image_tag "welcome.png", class: "wellcome_home_image" %>
     

@@ -1,21 +1,17 @@
 class ProductsController < ApplicationController
     before_action :set_product, only: [:show, :edit, :update, :destroy]
-    
-      
     def index
         @products = Product.all
+        @user = current_user
         if params[:search]
           @products = Product.search(params[:search])
         else
           @products = Product.all
         end
-       
-        
     end
-    
-    
     def show
         @products = Product.all
+        @user = current_user
         # @product = Product.find(params[:id])
         if current_user
           @comment = Comment.new
@@ -25,10 +21,9 @@ class ProductsController < ApplicationController
           format.html # show.html.erb
           format.json { render json: @product }
         end
-        
     end
-    
     def new
+      @user = current_user
       @categories = Category.all.map{|c| [ c.categoria, c.id ] }
       @opsystems = Opsystem.all
         if current_user.try(:admin)
@@ -36,14 +31,12 @@ class ProductsController < ApplicationController
         else
              redirect_to root_url
         end
-        
     end
-    
      # GET /products/1/edit
   def edit
+    @user = current_user
        @categories = Category.all.map{|c| [ c.categoria, c.id ] }
   end
-
   # POST /products
   # POST /products.json
   def create

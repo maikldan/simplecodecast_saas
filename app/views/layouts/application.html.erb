@@ -37,7 +37,11 @@
       </ul>
         <ul class="nav navbar-right nav1">
           <% if current_user %>
-            <li><%= link_to "Sing Out", destroy_user_session_path, method: :delete %></li>
+              <% if @user.profile %>
+                <li><h4 class="nav_profile_name"> Hello, <%= @user.profile.first_name%></h4> <%= image_tag @user.profile.image, class: "nav-profile-image"%></li>
+              <% end %>
+              <li><%= link_to "Sing Out", destroy_user_session_path, method: :delete %></li>
+
           <% else %>
             <li><%= link_to "Log In", new_user_session_path, :remote => true, method: :get , 'data-toggle' => "modal", 'data-target' => "#myModal" %></li>
           <% end %>

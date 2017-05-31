@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resource :profile
   end
   resources :opsystems
-  
+
   resources :categories
   resources :contacts
   resources :opsystems
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
    resources :comments
    resources :pdfs
   end
-  
+
   get '/about' => 'pages#about'
   get '/products' => 'pages#products'
   root 'pages#home'

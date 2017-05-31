@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="profile_new_form_decript">
+    <h1 class="text-center">Edit Your Existing Profile</h1>
+  </div>
+  <div class="well profile_new_form">
+    <%= form_for @profile, url: edit_user_profile_path do |f| %>
+        <div class="form-group">
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :job_title %>
+          <%= f.select :job_title,['Developer','Enterpreneur','Investor'], {},class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :phone_number %>
+          <%= f.text_field :phone_number, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :contact_email %>
+          <%= f.text_field :contact_email, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :image %>
+          <%= f.file_field :image %>
+        </div>
+        <div class="form-group">
+          <%= f.label :description %>
+          <%= f.text_area :description, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.submit "Edit", class: 'submit_product_form' %>
+        </div>
+    <% end %>
+    <%= link_to 'Show', user_profile_url, class: 'btn btn-success' %>
+    <%= link_to 'Back', root_path, class: 'btn btn-primary' %>
+  </div>
+</div>

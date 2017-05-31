@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="shop_test@localhost" uuid="ff07d112-694e-4ed2-b9f0-7bef108196c3">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/shop_test</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="dabh0f96l2klat@ec2-54-235-199-36.compute-1.amazonaws.com" uuid="deac98e1-30d0-4f60-a34d-6ac01dcfdb44">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://ec2-54-235-199-36.compute-1.amazonaws.com:5432/dabh0f96l2klat?sslmode=require</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails simplecodecasts_saas: default" uuid="25a9e3b2-3626-48da-a983-d2fac19c1ea7">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://ec2-54-235-199-36.compute-1.amazonaws.com:5432/dabh0f96l2klat</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails simplecodecasts_saas: test" uuid="89a10e90-db0e-464b-ae36-08b652a6933e">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://ec2-54-235-199-36.compute-1.amazonaws.com:5432/dabh0f96l2klat</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails simplecodecasts_saas: production" uuid="f30fb8d6-6b70-478f-bbbd-901a75dd9bb9">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://ec2-54-235-199-36.compute-1.amazonaws.com:5432/dabh0f96l2klat</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails simplecodecasts_saas: development" uuid="4ad51112-a1a1-450b-a3a8-1ae85acd9fa7">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://ec2-54-235-199-36.compute-1.amazonaws.com:5432/dabh0f96l2klat</jdbc-url>
+    </data-source>
+  </component>
+</project>
